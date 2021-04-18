@@ -16,14 +16,14 @@ app.use(express.json({ extented: false }));
 app.use(cors());
 
 // Routes
-app.use('/', redirUrl); // Put the short url to redirect to the initial url
-
 app.use(
   "/graphql", graphqlHTTP({
     schema: schema,
     graphiql: true,
   })
 );
+
+app.use('/', redirUrl); // Put the short url to redirect to the initial url
 
 const port = process.env.PORT;
 
