@@ -6,7 +6,7 @@ const getShortenURL = async (args) => {
     const baseUrl = process.env.BASE_URL;
     let { longUrl } = args;
     
-    if (!validUrl.isHttpUri(baseUrl)) {
+    if (!validUrl.isHttpsUri(baseUrl)) {
         throw Error('invalid base url');
     }
 
